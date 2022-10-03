@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -9,10 +10,12 @@ namespace Morse_Code
 {
     internal class Program
     {
+        
         static bool shouldAccept = false;
 
         static void Main(string[] args)
         {
+
             Dictionary<char, string> dict = new Dictionary<char, string>
             {
                 { 'a', ". -" },
@@ -94,7 +97,40 @@ namespace Morse_Code
         {
             if (visible)
             {
-                Console.WriteLine(element.Value + "\n");
+                string[] resultArr = new string[2];
+                for (int i = 0; i < element.Value.Length; i++)
+                {
+                    if (element.Value[i] == '-')
+                    {
+                        resultArr[0] += "████████████";
+                        resultArr[1] += "████████████";
+                    }
+                    else if(element.Value[i] == '.')
+                    {
+                        resultArr[0] += "█████";
+                        resultArr[1] += "█████";
+                    }
+                    else
+                    {
+                        for (int j = 0; j < resultArr.Length; j++)
+                        {
+                            resultArr[j] += "         ";
+
+                        }
+                    }
+                }
+                Console.WriteLine();
+                int index = element.Key;
+                while(index > 14)
+                {
+                    index -= 14;
+                }
+                Console.ForegroundColor = (ConsoleColor)index;
+                foreach (var str in resultArr)
+                {
+                    Console.WriteLine(str);
+                }
+                Console.WriteLine();
                 Thread.Sleep(200);
             }
             else
@@ -119,7 +155,7 @@ namespace Morse_Code
 
         private static bool ConfigureMode()
         {
-            Console.WriteLine("Do you want to see the morse? (write 'true' or 'false')");
+            Console.WriteLine("Sound mode? (Enter 'true' or 'false')");
             string input;
             while (true)
             {
@@ -134,7 +170,7 @@ namespace Morse_Code
                 }
             }
             Console.Clear();
-            return Convert.ToBoolean(input);
+            return !Convert.ToBoolean(input);
         }
 
         private static void WrongInput()
