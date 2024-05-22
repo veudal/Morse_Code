@@ -1,0 +1,8 @@
+C:\repos\Morse_Code\Morse_Code\bin\Release\Morse_Code.exe.config
+C:\repos\Morse_Code\Morse_Code\bin\Release\Morse_Code.exe
+C:\repos\Morse_Code\Morse_Code\bin\Release\Morse_Code.pdb
+C:\repos\Morse_Code\Morse_Code\obj\Release\Morse_Code.csproj.AssemblyReference.cache
+C:\repos\Morse_Code\Morse_Code\obj\Release\Morse_Code.csproj.SuggestedBindingRedirects.cache
+C:\repos\Morse_Code\Morse_Code\obj\Release\Morse_Code.csproj.CoreCompileInputs.cache
+C:\repos\Morse_Code\Morse_Code\obj\Release\Morse_Code.exe
+C:\repos\Morse_Code\Morse_Code\obj\Release\Morse_Code.pdb
